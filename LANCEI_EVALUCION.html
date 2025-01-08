@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Virtual - Fatiga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #1f1f1f;
+            color: #ffcc00;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .left-section, .right-section {
+            width: 20%;
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .center-section {
+            width: 60%;
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            color: #ffcc00;
+        }
+        section {
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 0.5rem 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        ul li::before {
+            content: "\2022";
+            color: #ffcc00;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
+            margin-left: -20px;
+        }
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #1f1f1f;
+            color: #ffcc00;
+            margin-top: auto;
+        }
+        .section-title {
+            border-bottom: 2px solid #ffcc00;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+            margin-top: 1rem;
+        }
+        .active .content {
+            display: block;
+        }
+        .no-toggle .content {
+            display: block !important;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.section-title').forEach(title => {
+                if (!title.parentElement.classList.contains('no-toggle')) {
+                    title.addEventListener('click', () => {
+                        const section = title.parentElement;
+                        section.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Simulador Virtual - Fatiga</h1>
+    </header>
+    <div class="container">
+        <div class="left-section no-toggle">
+            <section>
+                <h2 class="section-title">Información</h2>
+<div class="content">
+    <p>Este proyecto, desarrollado por estudiantes de Maestría y Doctorado en Tecnología Avanzada del IPN, campus Querétaro, busca caracterizar estados alterados de la conducción mediante la manipulación de estímulos al conductor o condiciones de manejo.</p>
+    <p>Se registrarán mediciones de electrocardiograma (ECG) y electroencefalograma (EEG) bajo diferentes estímulos, incluyendo:</p>
+    <ul>
+        <li>Niveles de tráfico (simulador).</li>
+        <li>Condiciones climáticas (simulador).</li>
+        <li>Distracción manual (uso del celular).</li>
+        <li>Distracción auditiva/cognitiva (seguir instrucciones, responder preguntas, música).</li>
+    </ul>
+    <p>También se analizará la dinámica vehicular en condiciones simuladas y pruebas en pista para evaluar el impacto de estas variables en el comportamiento del conductor, garantizando datos representativos de dichas influencias.</p>
+</div>
+
+            </section>
+        </div>
+        <div class="center-section">
+            <section class="no-toggle">
+                <h2 class="section-title">¡Te damos la bienvenida!</h2>
+                <div class="content">
+                    <p>Este es un proyecto diseñado para evaluar la fatiga en la conducción vehicular, mediante un sistema avanzado de simulación y análisis de señales.</p>
+                    <p><strong>Fechas de registro:</strong> Enero del 2025</p>
+<p><strong>Fechas de evaluacion :</strong> Febrero del 2025 </p>
+                </div>
+            </section>
+
+            <section class="no-toggle">
+                <h2 class="section-title">Objetivo del estudio</h2>
+                <div class="content">
+                    <p>Revelar las condiciones que describen y caracterizan a un estado normal o basal al conducir usando las respuestas encefalográficas y electrocardiograficas del conductor, así como variables de dinámica vehicular para poder distinguir estados mentales y emocionales
+normales y alterados al conducir.</p>
+                </div>
+            </section>
+
+            <section>
+    <h2 class="section-title">¿Cómo sé si puedo participar?</h2>
+    <div class="content">
+        <h3>Puedo participar si...</h3>
+        <ul>
+            <li>Tengo 18 años o más.</li>
+            <li>Estoy sano y no tengo enfermedades crónicas o agudas que afecten mi vista o capacidades motoras.</li>
+            <li>Cuento con una licencia de conducir válida y estoy activo como conductor.</li>
+            <li>Tengo al menos 1 año de experiencia conduciendo vehículos.</li>
+            <li>Acepto participar de forma voluntaria y firmo el formulario de consentimiento informado.</li>
+        </ul>
+        <h3>No puedo participar si...</h3>
+        <ul>
+            <li>Tengo enfermedades crónicas, cardiovasculares, neurológicas o psiquiátricas que puedan afectar la conducción.</li>
+            <li>Uso medicamentos que alteren el estado de alerta, percepción o capacidad de respuesta.</li>
+            <li>Estoy embarazada.</li>
+            <li>Tengo un historial de accidentes vehiculares graves en los últimos 2 años.</li>
+            <li>Consumo regularmente alcohol, drogas recreativas u otras sustancias que afecten la conducción.</li>
+        </ul>
+        <h3>Puedo ser eliminado del estudio si...</h3>
+        <ul>
+            <li>Decido retirarme voluntariamente en cualquier momento.</li>
+            <li>No sigo las instrucciones del estudio o pongo en riesgo mi seguridad o la integridad del estudio.</li>
+            <li>Aparece una condición médica durante el estudio que comprometa mi seguridad.</li>
+            <li>Mis datos recopilados son insuficientes o incompletos por fallos técnicos u otras razones.</li>
+            <li>Presento efectos adversos durante las pruebas, como cambios abruptos en señales biométricas o incidentes en pista o simulador.</li>
+        </ul>
+    </div>
+</section>
+
+
+            <section>
+                <h2 class="section-title">Instrucciones</h2>
+                <div class="content">
+                    <ol>
+                        <li>Completa el <a href="#">formulario de registro</a>.</li>
+                        
+                        <li>Preséntate con puntualidad en el campus del IPN Querétaro.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Requisitos el día del estudio</h2>
+                <div class="content">
+                    <ul>
+                        <li>Haber dormido al menos 6 horas</li>
+                        <li>No consumir cafeína antes del estudio</li>
+                        <li>Presentarse con ropa cómoda</li>
+                        <li>Tener disponibilidad de 2 horas</li>
+                    </ul>
+                </div>
+            </section>
+
+<section>
+    <h2 class="section-title">Conoce nuestro entorno de simulación</h2>
+    <div class="content">
+        <p>El simulador combina tecnología de punta para replicar escenarios de conducción realista. A continuación, se detalla el software y hardware utilizados:</p>
+
+        <h3>Software</h3>
+        <ul>
+            <li>
+                <strong>Simulador City Car Driving</strong>: Diseñado para prácticas seguras y evaluaciones de conducción.
+                <div class="image-container">
+                    <img src="path_to_image_city_car_driving.jpg" alt="Simulador City Car Driving">
+                    <p class="image-caption">Simulador City Car Driving en acción.</p>
+                </div>
+            </li>
+            <li>
+                <strong>Software EmotivPRO</strong>: Herramienta avanzada para capturar y analizar datos de EEG.
+                <div class="image-container">
+                    <img src="path_to_image_emotivpro.jpg" alt="Software EmotivPRO">
+                    <p class="image-caption">Interfaz del software EmotivPRO.</p>
+                </div>
+            </li>
+            <li>
+                <strong>Software EEG Synchronous</strong>: Para la sincronización de datos electrocardiográficos (ECG).
+                <div class="image-container">
+                    <img src="path_to_image_eeg_synchronous.jpg" alt="Software EEG Synchronous">
+                    <p class="image-caption">Pantalla del software EEG Synchronous.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Hardware</h3>
+        <ul>
+            <li>
+                <strong>Simulador con cabina inmersiva</strong>: Incluye controles reales (Volante, pedales y palanca) y pantallas panorámicas.
+                <div class="image-container">
+                    <img src="path_to_image_cabina_inmersiva.jpg" alt="Simulador con cabina inmersiva">
+                    <p class="image-caption">Vista de la cabina inmersiva.</p>
+                </div>
+            </li>
+            <li>
+                <strong>Electroencefalógrafo Emotiv EPOC X</strong>: Para capturar actividad cerebral en tiempo real.
+                <div class="image-container">
+                    <img src="path_to_image_emotiv_epoc_x.jpg" alt="Electroencefalógrafo Emotiv EPOC X">
+                    <p class="image-caption">Electroencefalógrafo Emotiv EPOC X en uso.</p>
+                </div>
+            </li>
+            <li>
+                <strong>Electrocardiógrafo Sonolife</strong>: Para registrar señales ECG en pruebas simuladas.
+                <div class="image-container">
+                    <img src="path_to_image_sonolife.jpg" alt="Electrocardiógrafo Sonolife">
+                    <p class="image-caption">Electrocardiógrafo Sonolife configurado.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Ruta seleccionada para las pruebas</h3>
+        <p>Esta ruta ha sido seleccionada de manera que el conductor pueda realizar distintos tipos de maniobras. La ruta incluye:</p>
+        <ul>
+            <li>3 vueltas a la izquierda.</li>
+            <li>5 vueltas a la derecha.</li>
+            <li>3 tramos rectos.</li>
+            <li>1 curva a la izquierda.</li>
+            <li>1 curva a la derecha.</li>
+            <li>Cambio de carril y rebase, que se pueden realizar en cualquier momento.</li>
+        </ul>
+        <p>La ruta se muestra en la figura 1. Se detalla el punto de inicio ("INICIO"), seleccionado automáticamente por el simulador, y el punto final ("FIN"), que se selecciona manualmente. Posteriormente, se enumeran las maniobras en el orden que el conductor debe realizarlas.</p>
+        <div class="image-container">
+            <img src="path_to_image_route.jpg" alt="Figura 1: Ruta seleccionada para pruebas">
+            <p class="image-caption">Figura 1: Ruta seleccionada para pruebas de simulación.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .image-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .image-caption {
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 5px;
+    }
+</style>
+
+
+</div>
+
+ <div class="right-section no-toggle">
+    <section>
+        <h2 class="section-title">Nuestros investigadores</h2>
+        <div class="content">
+            <p>Para más información, escribe a:</p>
+            <div class="researcher">
+                <img src="path_to_image_ilse_cervantes.jpg" alt="Dra. Ilse Cervantes Camacho">
+                <p><a href="mailto:icervantesc@ipn.mx">Dra. Ilse Cervantes Camacho</a></p>
+            </div>
+            <div class="researcher">
+                <img src="path_to_image_rafael_carmona.jpg" alt="Rafael Carmona García">
+                <p><a href="mailto:rcarmonag2300@alumno.ipn.mx">Rafael Carmona García</a></p>
+            </div>
+            <div class="researcher">
+                <img src="path_to_image_alicia_nava.jpg" alt="Alicia Yanadira Nava Fuentes">
+                <p><a href="mailto:anavaf2000@alumno.ipn.mx">Alicia Yanadira Nava Fuentes</a></p>
+            </div>
+            <div class="researcher">
+                <img src="path_to_image_bryan_jimenez.jpg" alt="Bryan Alexis Jiménez Aguilar">
+                <p><a href="mailto:mcbajimenez2400@alumno.ipn.mx">Bryan Alexis Jiménez Aguilar</a></p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .researcher {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .researcher img {
+        max-width: 150px;
+        height: auto;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+        margin-bottom: 10px;
+    }
+    .researcher p {
+        margin: 0;
+        font-size: 1.1em;
+    }
+</style>
+
+
+</div>
+
+    </div>
+    <footer>
+        <p>Maestría en Tecnología Avanzada - IPN Querétaro</p>
+    </footer>
+</body>
+</html>

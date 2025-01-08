@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -185,7 +186,7 @@
                 <h2 class="section-title">Objetivo del estudio</h2>
                 <div class="content">
                     <p>Revelar las condiciones que describen y caracterizan a un estado normal o basal al conducir usando las respuestas encefalográficas y electrocardiograficas del conductor, así como variables de dinámica vehicular para poder distinguir estados mentales y emocionales
-normales y alterados al conducir.</p>
+normales y alterados al conducir.</p>
                 </div>
             </section>
 
@@ -337,29 +338,74 @@ normales y alterados al conducir.</p>
 
 
         </div>
-        <div class="right-section no-toggle">
-            <section>
-                <h2 class="section-title">Nuestros investigadores</h2>
-                <div class="content">
-                    <p>Para más información, escribe a:</p>
-                    <div class="researcher">
-                        <img src="IlseCervantes.jpg" alt="Dra. Ilse Cervantes Camacho">
-                        <p><a href="mailto:icervantesc@ipn.mx">Dra. Ilse Cervantes Camacho</a></p>
-                    </div>
-                    <div class="researcher">
-                        <img src="path_to_image_rafael_carmona.jpg" alt="Rafael Carmona García">
-                        <p><a href="mailto:rcarmonag2300@alumno.ipn.mx">Rafael Carmona García</a></p>
-                    </div>
-                    <div class="researcher">
-                        <img src="path_to_image_alicia_nava.jpg" alt="Alicia Yanadira Nava Fuentes">
-                        <p><a href="mailto:anavaf2000@alumno.ipn.mx">Alicia Yanadira Nava Fuentes</a></p>
-                    </div>
-                    <div class="researcher">
-                        <img src="BryanAlexisJimenezAguilar..jpg" alt="Bryan Alexis Jiménez Aguilar">
-                        <p><a href="mailto:mcbajimenez2400@alumno.ipn.mx">Bryan Alexis Jiménez Aguilar</a></p>
-                    </div>
-                </div>
-            </section>
+<style>
+    .researchers-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        background-color: #1e1e1e; /* Fondo gris oscuro */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .researcher {
+        text-align: center;
+        max-width: 200px;
+        margin: 10px;
+    }
+
+    .researcher img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        border: 2px solid #ffcc00; /* Borde amarillo */
+        margin-bottom: 10px;
+    }
+
+    .researcher p {
+        margin: 0;
+        font-size: 1em;
+        color: #ffcc00; /* Texto amarillo */
+    }
+
+    .researcher a {
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+    .researcher a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<section>
+    <h2 class="section-title">Nuestros investigadores</h2>
+    <div>
+        <p>Para más información, escribe a:</p>
+        <div class="researchers-container">
+            <div class="researcher">
+                <img src="IlseCervantes.jpg" alt="Dra. Ilse Cervantes Camacho">
+                <p><a href="mailto:icervantesc@ipn.mx">Dra. Ilse Cervantes Camacho</a></p>
+            </div>
+            <div class="researcher">
+                <img src="path_to_image_rafael_carmona.jpg" alt="Rafael Carmona García">
+                <p><a href="mailto:rcarmonag2300@alumno.ipn.mx">Rafael Carmona García</a></p>
+            </div>
+            <div class="researcher">
+                <img src="path_to_image_alicia_nava.jpg" alt="Alicia Yanadira Nava Fuentes">
+                <p><a href="mailto:anavaf2000@alumno.ipn.mx">Alicia Yanadira Nava Fuentes</a></p>
+            </div>
+            <div class="researcher">
+                <img src="BryanAlexisJimenezAguilar..jpg" alt="Bryan Alexis Jiménez Aguilar">
+                <p><a href="mailto:mcbajimenez2400@alumno.ipn.mx">Bryan Alexis Jiménez Aguilar</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
         </div>
     </div>
     <footer>

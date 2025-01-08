@@ -24,22 +24,21 @@
         .container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 1rem;
             gap: 1rem;
         }
-        .left-section, .right-section {
-            width: 20%;
+        .left-section, .right-section, .center-section {
             background: #1e1e1e;
             padding: 1rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
+        .left-section, .right-section {
+            flex: 1 1 20%;
+        }
         .center-section {
-            width: 60%;
-            background: #1e1e1e;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            flex: 1 1 60%;
         }
         h1, h2 {
             color: #ffcc00;
@@ -94,6 +93,47 @@
         .no-toggle .content {
             display: block !important;
         }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .image-caption {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .researcher {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .researcher img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .researcher p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .left-section, .right-section, .center-section {
+                flex: 1 1 100%;
+            }
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -116,29 +156,30 @@
         <div class="left-section no-toggle">
             <section>
                 <h2 class="section-title">Información</h2>
-<div class="content">
-    <p>Este proyecto, desarrollado por estudiantes de Maestría y Doctorado en Tecnología Avanzada del IPN, campus Querétaro, busca caracterizar estados alterados de la conducción mediante la manipulación de estímulos al conductor o condiciones de manejo.</p>
-    <p>Se registrarán mediciones de electrocardiograma (ECG) y electroencefalograma (EEG) bajo diferentes estímulos, incluyendo:</p>
-    <ul>
-        <li>Niveles de tráfico (simulador).</li>
-        <li>Condiciones climáticas (simulador).</li>
-        <li>Distracción manual (uso del celular).</li>
-        <li>Distracción auditiva/cognitiva (seguir instrucciones, responder preguntas, música).</li>
-    </ul>
-    <p>También se analizará la dinámica vehicular en condiciones simuladas y pruebas en pista para evaluar el impacto de estas variables en el comportamiento del conductor, garantizando datos representativos de dichas influencias.</p>
-</div>
-
+                <div class="content">
+                    <p>Este proyecto, desarrollado por estudiantes de Maestría y Doctorado en Tecnología Avanzada del IPN, campus Querétaro, busca caracterizar estados alterados de la conducción mediante la manipulación de estímulos al conductor o condiciones de manejo.</p>
+                    <p>Se registrarán mediciones de electrocardiograma (ECG) y electroencefalograma (EEG) bajo diferentes estímulos, incluyendo:</p>
+                    <ul>
+                        <li>Niveles de tráfico (simulador).</li>
+                        <li>Condiciones climáticas (simulador).</li>
+                        <li>Distracción manual (uso del celular).</li>
+                        <li>Distracción auditiva/cognitiva (seguir instrucciones, responder preguntas, música).</li>
+                    </ul>
+                    <p>También se analizará la dinámica vehicular en condiciones simuladas y pruebas en pista para evaluar el impacto de estas variables en el comportamiento del conductor, garantizando datos representativos de dichas influencias.</p>
+                </div>
             </section>
         </div>
         <div class="center-section">
+            <!-- Include all your sections exactly as they are in your original content -->
             <section class="no-toggle">
                 <h2 class="section-title">¡Te damos la bienvenida!</h2>
                 <div class="content">
                     <p>Este es un proyecto diseñado para evaluar la fatiga en la conducción vehicular, mediante un sistema avanzado de simulación y análisis de señales.</p>
                     <p><strong>Fechas de registro:</strong> Enero del 2025</p>
-<p><strong>Fechas de evaluacion :</strong> Febrero del 2025 </p>
+                    <p><strong>Fechas de evaluación:</strong> Febrero del 2025</p>
                 </div>
             </section>
+            <!-- Add all your other sections here -->
 
             <section class="no-toggle">
                 <h2 class="section-title">Objetivo del estudio</h2>
@@ -295,54 +336,31 @@ normales y alterados al conducir.</p>
 </style>
 
 
-</div>
-
- <div class="right-section no-toggle">
-    <section>
-        <h2 class="section-title">Nuestros investigadores</h2>
-        <div class="content">
-            <p>Para más información, escribe a:</p>
-            <div class="researcher">
-                <img src="IlseCervantes.jpg" alt="Dra. Ilse Cervantes Camacho">
-                <p><a href="mailto:icervantesc@ipn.mx">Dra. Ilse Cervantes Camacho</a></p>
-            </div>
-            <div class="researcher">
-                <img src="path_to_image_rafael_carmona.jpg" alt="Rafael Carmona García">
-                <p><a href="mailto:rcarmonag2300@alumno.ipn.mx">Rafael Carmona García</a></p>
-            </div>
-            <div class="researcher">
-                <img src="path_to_image_alicia_nava.jpg" alt="Alicia Yanadira Nava Fuentes">
-                <p><a href="mailto:anavaf2000@alumno.ipn.mx">Alicia Yanadira Nava Fuentes</a></p>
-            </div>
-            <div class="researcher">
-                <img src="BryanAlexisJimenezAguilar..jpg" alt="Bryan Alexis Jiménez Aguilar">
-                <p><a href="mailto:mcbajimenez2400@alumno.ipn.mx">Bryan Alexis Jiménez Aguilar</a></p>
-            </div>
         </div>
-    </section>
-</div>
-
-<style>
-    .researcher {
-        text-align: center;
-        margin: 20px 0;
-    }
-    .researcher img {
-        max-width: 150px;
-        height: auto;
-        border-radius: 50%;
-        border: 2px solid #ddd;
-        margin-bottom: 10px;
-    }
-    .researcher p {
-        margin: 0;
-        font-size: 1.1em;
-    }
-</style>
-
-
-</div>
-
+        <div class="right-section no-toggle">
+            <section>
+                <h2 class="section-title">Nuestros investigadores</h2>
+                <div class="content">
+                    <p>Para más información, escribe a:</p>
+                    <div class="researcher">
+                        <img src="IlseCervantes.jpg" alt="Dra. Ilse Cervantes Camacho">
+                        <p><a href="mailto:icervantesc@ipn.mx">Dra. Ilse Cervantes Camacho</a></p>
+                    </div>
+                    <div class="researcher">
+                        <img src="path_to_image_rafael_carmona.jpg" alt="Rafael Carmona García">
+                        <p><a href="mailto:rcarmonag2300@alumno.ipn.mx">Rafael Carmona García</a></p>
+                    </div>
+                    <div class="researcher">
+                        <img src="path_to_image_alicia_nava.jpg" alt="Alicia Yanadira Nava Fuentes">
+                        <p><a href="mailto:anavaf2000@alumno.ipn.mx">Alicia Yanadira Nava Fuentes</a></p>
+                    </div>
+                    <div class="researcher">
+                        <img src="BryanAlexisJimenezAguilar..jpg" alt="Bryan Alexis Jiménez Aguilar">
+                        <p><a href="mailto:mcbajimenez2400@alumno.ipn.mx">Bryan Alexis Jiménez Aguilar</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
     <footer>
         <p>Maestría en Tecnología Avanzada - IPN Querétaro</p>
